@@ -14,11 +14,28 @@
 
 
 
+#Enter user details 
 
-echo "Please enter the new user name "
-$userName = Read-Host
-echo "Please enter the new user password "
-$password = Read-Host -AsSecureString
+$userName = Read-Host -Prompt "Please enter the new user name "
+DO{
+    $pwd1 = Read-Host -Prompt "Enter Password" -AsSecureString
+    $pwd2 = Read-Host -Prompt "Confirm Password" -AsSecureString
+
+    $pwd1_text = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($pwd1))
+    $pwd2_text = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($pwd2))
+    if ($pwd1_text -eq $pwd_text2){
+        $pwd_final = $pwd2
+     }
+
+    if ($pwd1_text -ne $pwd2_text){
+
+        Write-Host "Passwords do not match, please re enter"
+    }
+}while ($pwd1_text -ne $pwd2_text)
+
+
+
+
 
 Show-Menu –Title 'My Menu'
  $selection = Read-Host "Please make a selection"
@@ -38,7 +55,7 @@ Show-Menu –Title 'My Menu'
 echo "Please enter the new user description "
 $userDescription = Read-Host
 
-echo "Creating new user...."
-New-LocalUser -Name $userName -Password $password -FullName $password -Description $userDescription
-echo "Adding user to " $userGroup " group "
+write-host "Creating "$userName
+New-LocalUser -Name $userName -Password $pwd2 -FullName $userName -Description $userDescription
+write-host "Added user to " $userGroup " group "
 Add-LocalGroupMember -Group $userGroup -Member $userName
