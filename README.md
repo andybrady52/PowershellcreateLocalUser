@@ -11,7 +11,8 @@ There is a ps1 file and a .exe in the repo. You need to choose to run the .exe f
 
 ![image](https://user-images.githubusercontent.com/78499920/200179715-f4f96b79-5ee4-4f9a-b6a9-e1d08158ba8d.png)
 
-![image](https://user-images.githubusercontent.com/78499920/200179751-be9e2bd0-670c-4f21-aa43-028ebbc96aee.png)
+![image](https://user-images.githubusercontent.com/78499920/201758949-a0e07119-2720-4aab-9a3d-90c203ccd6df.png)
+
 
 
 ![1st screen](https://user-images.githubusercontent.com/78499920/199755960-203a234f-a208-422d-8811-ae33ec54506c.PNG)
