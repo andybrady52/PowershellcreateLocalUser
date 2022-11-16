@@ -6,7 +6,6 @@ You can choose to either add a user to the users group or the administrators gro
 
 You will need to run the script as an admin to have the permissions to create a user.
 
-There is a ps1 file and a .exe in the repo. You need to choose to run the .exe file as an admin also
 
 
 ![image](https://user-images.githubusercontent.com/78499920/200179715-f4f96b79-5ee4-4f9a-b6a9-e1d08158ba8d.png)
