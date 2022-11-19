@@ -28,12 +28,13 @@ function manualUserDetails {
     $Description=@()
     $UserGroup=@()
 
-    $numberOfUsers = read-host -Prompt "How many users would you like to create?"
+    DO{$numberOfUsers = read-host -Prompt "How many users would you like to create?"}
+    until($numberOfUsers -match '^\d{1,3}$')
     ""
     #repeat loop for the requested number of users
     for ($i=1; $i -le $numberOfUsers ; $i++){
     
-        $NewUser += read-host -prompt "Please enter user name "
+      $NewUser += read-host -prompt "Please enter user name "
         ""
     
         DO{
@@ -60,7 +61,8 @@ function manualUserDetails {
     Write-Host "1: Press '1' for administrators"
     Write-Host "2: Press '2' for users."
     ""
-    $selection = Read-Host "Please make a selection"
+    DO{$selection = Read-Host "Please make a selection"}
+    until(($selection -eq 1) -or ($selection -eq 2))
             ""
             switch ($selection)
             {
@@ -105,7 +107,8 @@ function createUser{
 
 
 #Read input from the user to decide which option to create users
-$response = read-host -prompt "Would you like to create users manually or from CSV? m or c?"
+DO{$response = read-host -prompt "Would you like to create users manually or from CSV? m or c?"}
+until(($response -eq "m") -or ($response -eq "c"))
 ""
 
 if ($response -eq "c"){
